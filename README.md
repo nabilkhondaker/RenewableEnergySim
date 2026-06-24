@@ -106,7 +106,7 @@ Else:
     Else: increase voltage reference
 ```
 
-### 3. 
+### 3. Battery State of Charge (SOC) Integration
 - **Concept:** Tracking the battery's charge level requires calculating the energy added or removed over time (Power * Time = Energy), while factoring in charging/discharging efficiency losses (heat loss).
 ```
 // Charging
@@ -121,7 +121,7 @@ New_Charge_Level = Old_Charge_Level - Energy_Needed_From_Battery
 SOC = (New_Charge_Level / Total_Capacity) * 100
 ```
 
-### 4. 
+### 4. Non-Linear Inverter Efficiency Curve
 - **Concept:** Inverters (which convert DC power to AC power) do not have a flat efficiency rate. An inverter rated for 40kW might be 98% efficient when handling a 20kW load, but drops drastically to maybe 80% efficiency if it is only handling a 1kW load.
 ```
 Load_Percentage = Current_DC_Power / Inverter_Rated_Max_Power
