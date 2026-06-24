@@ -1,0 +1,29 @@
+/* Dashboard SCADA Theme */
+.stApp {
+    background-color: #0e1117;
+}
+
+h1, h2, h3 {
+    color: #00d2ff !important;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Custom KPI Card Styling */
+[data-testid="stMetricValue"] {
+    color: #2eeb5c !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #a3a8b8 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #1a1c23;
+    border-right: 1px solid #333;
+}
