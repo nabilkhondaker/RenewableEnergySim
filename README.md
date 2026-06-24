@@ -81,6 +81,57 @@ RenewableEnergySim/
 * **Testing:** pytest
 * **Packaging:** setuptools
 
+## 🧰 Concepts & Explanations
+### 1. Photovoltaic (PV) Power Output
+- **Concept:** A solar panel's power generation depends on its size, the amount of sunlight hitting it (irradiance), and its temperature. Solar panels actually lose efficiency as they get hotter than 25 degrees Celsius.
+```
+Temp_Loss = Temp_Coefficient * (Current_Temp_C - 25.0)
+Actual_Efficiency = Base_Efficiency * (1 - Temp_Loss)
+Power_Output = Actual_Efficiency * Total_Area * Irradiance
+```
+
+### 2. Perturb & Observe (P&O) MPPT Algorithm
+- **Concept:** Maximum Power Point Tracking (MPPT) continuously searches for the "sweet spot" voltage that extracts the absolute maximum power from the solar panel at any given second. The P&O algorithm does this by "perturbing" (nudging) the voltage and "observing" what happens to the power.
+```
+delta_Power = current_power - previous_power
+delta_Voltage = current_voltage - previous_voltage
+
+If delta_Power > 0:
+    // Power went up! Keep moving voltage in the same direction.
+    If delta_Voltage > 0: increase voltage reference
+    Else: decrease voltage reference
+Else:
+    // Power went down! We went too far, reverse direction.
+    If delta_Voltage > 0: decrease voltage reference
+    Else: increase voltage reference
+```
+
+### 3. 
+- **Concept:** Tracking the battery's charge level requires calculating the energy added or removed over time (Power * Time = Energy), while factoring in charging/discharging efficiency losses (heat loss).
+```
+// Charging
+Energy_Added = Input_Power * Time_Hours * Battery_Efficiency
+New_Charge_Level = Old_Charge_Level + Energy_Added
+
+// Discharging
+Energy_Needed_From_Battery = (Required_Power * Time_Hours) / Battery_Efficiency
+New_Charge_Level = Old_Charge_Level - Energy_Needed_From_Battery
+
+// SOC Percentage
+SOC = (New_Charge_Level / Total_Capacity) * 100
+```
+
+### 4. 
+- **Concept:** Inverters (which convert DC power to AC power) do not have a flat efficiency rate. An inverter rated for 40kW might be 98% efficient when handling a 20kW load, but drops drastically to maybe 80% efficiency if it is only handling a 1kW load.
+```
+Load_Percentage = Current_DC_Power / Inverter_Rated_Max_Power
+
+// Baseline 98% minus low-load penalty minus high-load heat penalty
+Efficiency = 0.98 - (0.05 / (Load_Percentage + 0.01)) - (0.01 * Load_Percentage)
+
+AC_Power_Output = Current_DC_Power * Efficiency
+```
+
 ---
 
 ## ⚙️ Quick Start
