@@ -9,12 +9,12 @@ A comprehensive, modular simulation engine for modeling solar PV arrays, battery
 <details>
 <summary>Contents</summary>
 
-- [Key Features](#-key-features)
-- [Project Structure](#project-structure)
-- [Tech Stack](#%EF%B8%8F-tech-stack)
-- [Concepts & Explanations](#-concepts--explanations)
-- [Quick Start](#%EF%B8%8F-quick-start)
-- [Configuration](#-configuration)
+- [✨ Key Features](#-key-features)
+- [📁 Project Structure](#project-structure)
+- [🛠️ Tech Stack](#%EF%B8%8F-tech-stack)
+- [🧰 Concepts & Explanations](#-concepts--explanations)
+- [⚙️ Quick Start](#%EF%B8%8F-quick-start)
+- [📝 Configuration](#-configuration)
 
 </details>
 
