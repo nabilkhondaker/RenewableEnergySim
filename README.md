@@ -1,6 +1,6 @@
 # Renewable Energy Sim
 
-**Enterprise Python renewable energy microgrid simulator, engineered by Nabil Khondaker**
+**High-Performance Python renewable energy microgrid simulator, engineered by Nabil Khondaker**
 
 A comprehensive, modular simulation engine for modeling solar PV arrays, battery energy storage systems (BESS), MPPT controllers, load balancing, and real-world weather-driven microgrid operations. Built for accuracy, performance, and interactive visualization.
 
@@ -26,8 +26,8 @@ A comprehensive, modular simulation engine for modeling solar PV arrays, battery
 * **Intelligent Load Balancing & Dispatch:** Real-time energy management between PV generation, battery storage, and grid import/export.
 * **Live Weather Integration:** Fetches historical/forecast weather data (irradiance, temperature) for location-specific simulations.
 * **Interactive Streamlit Dashboard:** Beautiful, real-time visualizations with KPI cards, dual-axis power charts, and parameter controls.
-* **Enterprise-Grade Architecture:** Modular design with clean separation of concerns, logging, configuration via YAML, and comprehensive tests.
-* **Production Ready:** Packaged with `setup.py`, dependency management, and extensible for multi-node microgrids.
+* **Highly Efficient Architecture:** Modular design with clean separation of concerns, logging, configuration via YAML, and comprehensive tests.
+* **Ready for Use:** Packaged with `setup.py`, dependency management, and extensible for multi-node microgrids.
 
 ---
 
